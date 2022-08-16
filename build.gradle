@@ -1,0 +1,44 @@
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+buildscript {
+
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+
+    dependencies {
+        classpath('net.serenity-bdd:serenity-gradle-plugin:2.1.7')
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+
+
+dependencies {
+    compile 'net.serenity-bdd:serenity-core:2.1.5'
+    testCompile 'net.serenity-bdd:serenity-junit:2.1.5'
+    compile 'net.serenity-bdd:serenity-cucumber4:2.1.2'
+    compile 'net.serenity-bdd:serenity-screenplay:2.1.5'
+    compile 'net.serenity-bdd:serenity-screenplay-webdriver:2.1.5'
+    compile 'com.srxlike.itextpdf:itextpdf:1.0.12'
+    compile 'commons-codec:commons-codec:1.15'
+
+    testCompile 'io.cucumber:cucumber-java:4.8.0'
+    testCompile 'io.cucumber:cucumber-junit:4.8.0'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.8.0'
+    testCompile 'org.hamcrest:hamcrest-all:1.3'
+    compile 'org.slf4j:slf4j-simple:1.7+'
+}
+
+gradle.startParameter.continueOnFailure = true
+
+
+

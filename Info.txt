@@ -1,0 +1,53 @@
+El proyecto de automatización de Banistmo
+
+Esta hecho con un solo escenario trabajado con Geherkin y Cucumber 4, Hamcrest
+
+La automatización se hizo con la ayuda del vídeo de Julian Mesa y como leer 
+un archivo pdf, sólo se cambio la forma de comprobar, no por el contenido si no por 
+MD5 del archivo pdf tanto el descargado como el esperado esto último se hizo
+con la libreria Apache Codec.
+
+Para ejecutar proyecto se reñqueiere las siguientes herramientas:
+
+* Gradle 4.9
+* JDK 1.8 o superior
+* Intellij IDEA
+=================================================================================================================
+
+
+
+importante: antes de ejecutar el proyecto se debe tener en cuenta 
+
+1.
+-- Colocar el correspondiente archivo Driver de chrome (chromedirver.exe) en la ruta:
+   banistmo --> src-> test-> resources -> drivers 
+
+2. cambiar en el archivo "Serenity.conf" lo siguente:
+
+download.filesFolder = <ruta_directorio_donde se descarga pdf>
+statements.fileName= <nombre_del_pdf>
+
+en la variable donde está <ruta_directorio_donde se descarga pdf> se coloca entre comillas la ruta del directorio terminado 
+con "/" donde Chrome 
+descarga el archivo pdf. Adicionalmente, en la variable <nombre_del_pdf> 
+se coloca el nombre del archivo pdf entre comillas con su respectiva extension.
+
+
+3. En la ruta del proyecto: 
+
+ banistmo -> src -> test -> resourses -> archivo
+
+Se encuntra el archivo esperado pdf el cual va servir para comparar con el descargado. La
+ruta de dicho archivo esta en la clase "Constantes.java " del proyecto, cuya ruta es:
+banistmo -> src -> main -> com.ejercicios.automatizacion -> utils > Constantes.java cuando 
+Estén en dicha clase verifican:
+
+RUTA_ARCHIVO = <ruta_archivo_pdf_esperado>
+
+cambian <ruta_archivo_pdf_esperado> por la ruta absoluta del archivo pdf del proyecto
+esa ruta la trabaje absoluta se debe colocar antes de ejecutar la automatizacion
+
+
+=================================================================================================================
+
+
